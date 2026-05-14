@@ -1,9 +1,14 @@
-def greet(name):
-    return f"Hello, {name}!"
+from flask import Flask
 
-def farewell(name):
-    return f"Goodbye, {name}!"
+app = Flask(__name__)
 
-print(greet("World"))
-print(farewell("World"))
-print(this_variable_does_not_exist)
+@app.route("/")
+def greet():
+    return "Hello, World!"
+
+@app.route("/goodbye")
+def farewell():
+    return "Goodbye, World!"
+
+if __name__ == "__main__":
+    app.run()
